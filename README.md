@@ -13,7 +13,7 @@ git clone https://github.com/Tolulophey/Book-API.git
 ```
 Move into the cloned directory by running
 ```
-cd REST-API-with-express-Book-API
+cd Book-API
 ```
 You can then install all the dependencies for the project by runing the code below inside your terminal in the project directory
 ```
@@ -69,10 +69,54 @@ The API will return four error types when requests fail:
 - Sample: `http://127.0.0.1:3000/books`
 ```
 {
+    "message": "new book created",
+    "newBook": {
+        "title": "Moving Height",
+        "author": "John Smith",
+        "description": "A book on moving height",
+        "category": "fiction",
+        "purchaseCount": 30,
+        "imageUrl": "https://randomlink.com",
+        "tags": [
+            "fiction",
+            "moving",
+            "inspirational",
+            "height"
+        ],
+        "_id": "636f59f9662cdcb11c1c1c77",
+        "__v": 0
+    }
+}
+```
+
+#### GET /books/
+- General:
+    - Fetches all books
+    - Request Arguments: None
+    - Returns: the sucess status and all the books 
+- Sample: `http://127.0.0.1:3000/books`
+```
+{
     "message": "Books",
     "books": [
         {
             "_id": "636c1c9701d3138739afa8d1",
+            "title": "Green Heights",
+            "author": "John Smith",
+            "description": "A book on moving height",
+            "category": "non-fiction",
+            "purchaseCount": 30,
+            "imageUrl": "https://randomlink.com",
+            "tags": [
+                "fiction",
+                "moving",
+                "inspirational",
+                "height"
+            ],
+            "__v": 0
+        },
+        {
+            "_id": "636f59f9662cdcb11c1c1c77",
             "title": "Moving Height",
             "author": "John Smith",
             "description": "A book on moving height",
@@ -86,28 +130,11 @@ The API will return four error types when requests fail:
                 "height"
             ],
             "__v": 0
-        },
-        {
-            "_id": "636c1dbeba1b20da01b5e4d5",
-            "title": "Green Height",
-            "author": "John Smith",
-            "description": "A book on green height",
-            "category": "fiction",
-            "purchaseCount": 30,
-            "imageUrl": "https://randomlink.com",
-            "color": "green",
-            "tags": [
-                "fiction",
-                "moving",
-                "inspirational",
-                "height",
-                "green"
-            ],
-            "__v": 0
         }
     ]
 }
 ```
+
 
 #### GET /books/:id
 - General:
